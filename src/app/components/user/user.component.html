@@ -1,17 +1,48 @@
-<h1>
-  Hello {{Name}}
-</h1>
-<ul>
-<li>{{age}}</li>
- <li> {{email}}</li>
+<html lang="en" ng-app="addSkills">    
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<head></head>
+<body ng-controller="addSkillsController">
+  <h1 style="font-family:Courier New;">
+    Hello {{name}}
+  </h1>
+    <div>
+      <img src = "assets/img/wp.jpg" style="width:100px; height:100px;" />
+        <p>Age : {{age}}</p>
+        <p>Email : {{email}}</p>
  
-</ul>
+    </div>
 
-<h2>WorkoutPlan</h2>
-  <ul>
-    <li>{{Exercises}}</li>
-  </ul>
-<button(click) = "OnClick1()"> Add Lifting to WorkoutPlan </button>
-<button(click) = "OnClick2()"> Add Yoga to WorkoutPlan </button>
-<button(click) = "OnClick3()"> Add Cardio to WorkoutPlan </button>
-  
+
+    <form name="skillsFrm" ng-submit="addSkill()">
+        <input type="text" name="newSkill" ng-model="newSkill" required />
+        <button ng-disabled="skillsFrm.$invalid" ng-click="addSkill()">Add</button>
+     </form>
+     
+     <ul>
+       <li ng-repeat="skill in skills" class="{'fadeOut' : skill.done}">
+         <span class="fa fa-close" ng-click="deleteSkill($index)"></span>
+         <span>{{skill.title}}</span>
+       </li>
+     </ul>
+    
+  </body>
+</html>
+
+<script>
+    angular
+       .module('addSkills', [])
+       .controller('addSkillsController', ['$scope', function($scope) {
+     
+         $scope.skills = [];
+     
+         $scope.addSkill = function() {
+           $scope.skills.push({'title': $scope.newSkill, 'done':false})
+           $scope.newSkill = ''
+         }
+     
+         $scope.deleteSkill = function(index) {	
+           $scope.skills.splice(index, 1);
+         }
+       }])
+    </script>
+

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Http } from "@angular/http";
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-    name : string;
+    name :string;
     age:number;
     email:string;
     Exercises:string[];
@@ -23,6 +23,7 @@ export class UserComponent implements OnInit {
   ngOnInit() {
     this.name = 'Kwame Brown'
     this.age = 21;
+    this.email = "brown@gmail.com";
     this.Exercises = [];
     this.WorkoutPlan1 = {
       workout1:'Dumbbell press',
@@ -30,7 +31,7 @@ export class UserComponent implements OnInit {
       workout3:'Squats' }
 
     }
-    onClick1(){
+  onClick1(){
     this.Exercises.push("Lifting");
 
   }
