@@ -56,5 +56,9 @@
   "defaults": {
     "styleExt": "css",
     "component": {}
-  }
+  },
+  "assets": [
+    "assets",
+    "favicon.jpg" 
+  ]
 }

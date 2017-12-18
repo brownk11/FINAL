@@ -5,18 +5,24 @@ import { HttpModule } from "@angular/http";
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
+import { IndexComponent } from './index/index.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    IndexComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpModule, 
     RouterModule.forRoot([
         { path: "user", component: UserComponent },
+        { path: "home", component: IndexComponent },
+        { path: "foot", component: FooterComponent },
         { path: "", pathMatch: "full", redirectTo: "/home" }
     ])
   ],
