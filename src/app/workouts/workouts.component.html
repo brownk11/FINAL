@@ -1,0 +1,70 @@
+<div class="container">
+  <div id="grad" class="jumbotron">
+    <h1 class="display-3">Exercises</h1>
+    <hr class="my-4">
+  </div>
+  <div class="jumbotron">
+    <div class="card-deck">
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="assets/img/lifting.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Lifting</h4>
+          <p class="card-text text-center">Squats are a great glute exercise.</p>
+        </div>
+        <div class="card-body text-center">
+          <a (click)="AddToDone('Jogging')" id="Adding1" class="btn btn-primary">Add to Done</a>
+        </div>
+
+      </div>
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="assets/img/swimming.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Swimming</h4>
+          <p class="card-text text-center"></p>
+        </div>
+        <div class="card-body text-center">
+          <a (click)="AddToDone('Yoga')" id="Adding2" class="btn btn-primary">Add to Done</a>
+        </div>
+
+      </div>
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="assets/img/yoga.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Yoga</h4>
+          <p class="card-text text-center"></p>
+        </div>
+        <div class="card-body text-center">
+          <a (click)="AddToDone('Swimming')" id="Adding3" class="btn btn-primary">Add to Done</a>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="assets/img/jogging.png" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Jogging</h4>
+          <p class="card-text text-center"></p>
+        </div>
+        <div class="card-body text-center">
+          <a (click)="AddToDone('Lifting')" id="Adding4" class="btn btn-primary">Add to Done</a>
+        </div>
+
+      </div>
+    </div>
+    <h1 class="display-3"></h1>
+    <div class="row">
+      <div class="col-md-5 ">
+        <div class="card text-center">
+          <div class="card-header">
+            My finished Exercises
+          </div>
+          <ul class="list-group list-group-flush ">
+            <li *ngFor="let x of this.myExercises; index as i" class="list-group-item" (click)="removeFromMyExercises(x)">
+              <span title="Click to remove">{{x.name}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-5 ">
+        
+      </div>
+    </div>
+  </div>
