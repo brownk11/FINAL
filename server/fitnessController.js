@@ -33,7 +33,7 @@ router
   })
   .post("/myExercises", (req, res) => {
     //console.log(req.body);
-    exer = { name: req.body.exerciseName, reps: req.body.reps, weight: req.body.weight };
+    exer = { name: req.body.exerciseName, };
     share.myExercises.push(exer);
     ///console.log(share.myExercises);
     res.status(201).send(exer);

@@ -9,6 +9,7 @@ export class Person {
   id: string;
   picture: string;
   name: string;
+  myExercises: Exercise[];
   exerciseList: Exercise[] = [
     { name: "Jogging"},
     { name: "Lifting"},
@@ -17,7 +18,7 @@ export class Person {
     { name: "Swimming"},
        
   ];
-  myExercises: Exercise[] = this.exerciseList;
+  
 }
 
 export class Image {
