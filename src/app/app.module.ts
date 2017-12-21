@@ -7,12 +7,13 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
 import { IndexComponent } from './index/index.component';
 import { FooterComponent } from './footer/footer.component';
+
+import { WorkoutsComponent } from './workouts/workouts.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
-
 import { LoginComponent } from './login/login.component';
 import { SharingService } from './models/sharing.service';
-import { ExercisesComponent } from './exercises/exercises.component';
+
 
 @NgModule({
   declarations: [
@@ -21,10 +22,9 @@ import { ExercisesComponent } from './exercises/exercises.component';
     IndexComponent,
     FooterComponent,
     HeaderComponent,
-    NavComponent,
-    
+    NavComponent,    
     LoginComponent,
-    ExercisesComponent
+    WorkoutsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,7 @@ import { ExercisesComponent } from './exercises/exercises.component';
         { path: "user", component: UserComponent },
         { path: "home", component: IndexComponent },
         { path: "foot", component: FooterComponent },
-        { path: "workout", component: ExercisesComponent },
+        { path: "workout", component: WorkoutsComponent },
         { path: "login", component: LoginComponent },
         { path: "", pathMatch: "full", redirectTo: "/home" }
     ])

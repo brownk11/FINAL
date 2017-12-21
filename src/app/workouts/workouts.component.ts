@@ -5,23 +5,31 @@ import { Person } from "../models/Person";
 import { Exercise } from "../models/Exercise";
 import { SharingService } from "../models/sharing.service";
 
+
 @Component({
-  selector: 'app-workouts',
-  templateUrl: './workouts.component.html',
-  styleUrls: ['./workouts.component.css']
+  selector: "app-workouts",
+  templateUrl: "./workouts.component.html",
+  styleUrls: ["./workouts.component.css"],
+  
 })
 export class WorkoutsComponent implements OnInit {
-  constructor(private router: Router, private share: SharingService) {}
+  constructor(private http: Http, private router: Router, private share: SharingService) { }
   me: Person;
   ngOnInit() {
     if (this.share.me == null) {
-      this.router.navigate(["/workout"]);
+      this.router.navigate(["/login"]);
     }
     this.me = this.share.me;
   }
-  AddToDone(exerciseName: string, reps: number, weight: number) {
-    this.me.myExercises.push(new Exercise(exerciseName));
-    console.log(exerciseName );
+  AddToDone(exerciseName: string) {
+    const data = { exerciseName };
+    this.http.post(this.share.apiRoot + "/share/myExercises", data).subscribe(res => {
+      console.log(data);
+      this.me.myExercises.push(res.json());
+    });
+
+    //this.me.myExercises.push(new Exercise(exerciseName, "zero", 3, 12, 99));
+    //console.log(exerciseName + ", " + reps + ", " + weight);
   }
   removeFromMyExercises(key: Exercise) {
     var index = this.me.myExercises.indexOf(key, 0);
