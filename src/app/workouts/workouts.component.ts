@@ -15,13 +15,13 @@ export class WorkoutsComponent implements OnInit {
   me: Person;
   ngOnInit() {
     if (this.share.me == null) {
-      this.router.navigate(["/login"]);
+      this.router.navigate(["/workout"]);
     }
     this.me = this.share.me;
   }
   AddToDone(exerciseName: string, reps: number, weight: number) {
     this.me.myExercises.push(new Exercise(exerciseName));
-    console.log(exerciseName + ", " + reps + ", " + weight);
+    console.log(exerciseName );
   }
   removeFromMyExercises(key: Exercise) {
     var index = this.me.myExercises.indexOf(key, 0);

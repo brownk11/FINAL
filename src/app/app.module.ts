@@ -9,9 +9,10 @@ import { IndexComponent } from './index/index.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
-import { WorkoutsComponent } from './workouts/workouts.component';
+
 import { LoginComponent } from './login/login.component';
 import { SharingService } from './models/sharing.service';
+import { ExercisesComponent } from './exercises/exercises.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,9 @@ import { SharingService } from './models/sharing.service';
     FooterComponent,
     HeaderComponent,
     NavComponent,
-    WorkoutsComponent,
-    LoginComponent
+    
+    LoginComponent,
+    ExercisesComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,7 @@ import { SharingService } from './models/sharing.service';
         { path: "user", component: UserComponent },
         { path: "home", component: IndexComponent },
         { path: "foot", component: FooterComponent },
-        { path: "workout", component: WorkoutsComponent },
+        { path: "workout", component: ExercisesComponent },
         { path: "login", component: LoginComponent },
         { path: "", pathMatch: "full", redirectTo: "/home" }
     ])

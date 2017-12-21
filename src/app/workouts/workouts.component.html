@@ -5,18 +5,18 @@
   </div>
   <div class="jumbotron">
     <div class="card-deck">
-      <div class="card" style="width: 20rem;">
+      <div class="card" style="width: 10rem;">
         <img class="card-img-top" src="assets/img/lifting.jpg" alt="Card image cap">
         <div class="card-body">
           <h4 class="card-title">Lifting</h4>
           <p class="card-text text-center">Squats are a great glute exercise.</p>
         </div>
         <div class="card-body text-center">
-          <a (click)="AddToDone('Jogging')" id="Adding1" class="btn btn-primary">Add to Done</a>
+          <a (click)="AddToDone('Lifting')" id="Adding1" class="btn btn-primary">Add to Done</a>
         </div>
 
       </div>
-      <div class="card" style="width: 20rem;">
+      <div class="card" style="width: 10rem;">
         <img class="card-img-top" src="assets/img/swimming.jpg" alt="Card image cap">
         <div class="card-body">
           <h4 class="card-title">Swimming</h4>
@@ -37,14 +37,14 @@
           <a (click)="AddToDone('Swimming')" id="Adding3" class="btn btn-primary">Add to Done</a>
         </div>
       </div>
-      <div class="card" style="width: 20rem;">
+      <div class="card" style="width: 10rem;">
         <img class="card-img-top" src="assets/img/jogging.png" alt="Card image cap">
         <div class="card-body">
           <h4 class="card-title">Jogging</h4>
           <p class="card-text text-center"></p>
         </div>
         <div class="card-body text-center">
-          <a (click)="AddToDone('Lifting')" id="Adding4" class="btn btn-primary">Add to Done</a>
+          <a (click)="AddToDone('Jogging')" id="Adding4" class="btn btn-primary">Add to Done</a>
         </div>
 
       </div>
@@ -57,7 +57,7 @@
             My finished Exercises
           </div>
           <ul class="list-group list-group-flush ">
-            <li *ngFor="let x of this.myExercises; index as i" class="list-group-item" (click)="removeFromMyExercises(x)">
+            <li *ngFor="let x of this.me.myExercises; index as i" class="list-group-item" (click)="removeFromMyExercises(x)">
               <span title="Click to remove">{{x.name}}</span>
             </li>
           </ul>

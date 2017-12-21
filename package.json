@@ -4,13 +4,16 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    
     "build": "ng build",
-    "test": "ng test",
+    "server": "nodemon --watch server server/index.js",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "test": "make test",
+    "start": "node index.js"
     
   },
+
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
@@ -47,5 +50,6 @@
     "tslint": "~5.7.0",
     "typescript": "~2.4.2"
   }
+ 
   
 }
