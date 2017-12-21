@@ -13,7 +13,7 @@ export class Person {
     { name: "Jogging"},
     { name: "Lifting"},
     { name: "Yoga"},
-    { name: "KickBoxing"},
+    
     { name: "Swimming"},
        
   ];
