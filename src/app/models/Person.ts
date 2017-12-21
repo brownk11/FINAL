@@ -17,7 +17,7 @@ export class Person {
     { name: "Swimming"},
        
   ];
-  myExercises: Exercise[] = [];
+  myExercises: Exercise[] = this.exerciseList;
 }
 
 export class Image {

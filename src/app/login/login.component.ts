@@ -4,7 +4,7 @@ import { SharingService } from "../models/sharing.service";
 import { Http } from "@angular/http";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpModule } from "@angular/http";
-
+import { WorkoutsComponent } from '../workouts/workouts.component';
 declare var window: any;
 declare var FB: any;
 
@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
 
   loginFB() {
     this.sharingService.loginFB();
+    //this.router.navigate('/workout');
   }
 
   login(name: string, password: string, fbid?: string, picture?: string) {

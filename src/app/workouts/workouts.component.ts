@@ -17,15 +17,16 @@ export class WorkoutsComponent implements OnInit {
   me: Person;
   ngOnInit() {
     if (this.share.me == null) {
-      this.router.navigate(["/login"]);
+      this.router.navigate(["/workout"]);
     }
     this.me = this.share.me;
   }
   AddToDone(exerciseName: string) {
     const data = { exerciseName };
-    this.http.post(this.share.apiRoot + "/share/myExercises", data).subscribe(res => {
+    this.http.post(this.share.apiRoot + "/myExercises", data).subscribe(res => {
       console.log(data);
       this.me.myExercises.push(res.json());
+
     });
 
     //this.me.myExercises.push(new Exercise(exerciseName, "zero", 3, 12, 99));

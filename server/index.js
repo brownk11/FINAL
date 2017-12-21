@@ -19,7 +19,7 @@ server.use(function(req, res, next) {
 });
 server.use("/client", express.static("./jquery-mockup"));
 server.use("/old", handler.main);
-server.use("/players", fitnessController.router);
+server.use("/share", fitnessController.router);
 
 //console.log(process.env);
 server.listen(port);

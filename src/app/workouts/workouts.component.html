@@ -1,60 +1,60 @@
 <div class="container">
   <div id="grad" class="jumbotron">
-    <h1 class="display-3">Exercises</h1>
+    <h1 class="display-3">Workouts</h1>
     <hr class="my-4">
   </div>
   <div class="jumbotron">
     <div class="card-deck">
-      <div class="card" style="width: 10rem;">
-        <img class="card-img-top" src="assets/img/lifting.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title">Lifting</h4>
-          <p class="card-text text-center">Squats are a great glute exercise.</p>
-        </div>
-        <div class="card-body text-center">
-          <a (click)="AddToDone('Lifting')" id="Adding1" class="btn btn-primary">Add to Done</a>
-        </div>
-
-      </div>
-      <div class="card" style="width: 10rem;">
-        <img class="card-img-top" src="assets/img/swimming.jpg" alt="Card image cap">
+      <div class="card" style="width: 20rem;">
+       
         <div class="card-body">
           <h4 class="card-title">Swimming</h4>
           <p class="card-text text-center"></p>
         </div>
         <div class="card-body text-center">
-          <a (click)="AddToDone('Yoga')" id="Adding2" class="btn btn-primary">Add to Done</a>
+          <a (click)="AddToDone('Swimming')" id="Adding1" class="btn btn-primary">Add to Done</a>
         </div>
 
       </div>
       <div class="card" style="width: 20rem;">
-        <img class="card-img-top" src="assets/img/yoga.jpg" alt="Card image cap">
+        
+        <div class="card-body">
+          <h4 class="card-title">Lifting</h4>
+          <p class="card-text text-center"></p>
+        </div>
+        <div class="card-body text-center">
+          <a (click)="AddToDone(Lifting)" id="Adding2" class="btn btn-primary">Add to Done</a>
+        </div>
+
+      </div>
+      <div class="card" style="width: 20rem;">
+        
         <div class="card-body">
           <h4 class="card-title">Yoga</h4>
           <p class="card-text text-center"></p>
         </div>
         <div class="card-body text-center">
-          <a (click)="AddToDone('Swimming')" id="Adding3" class="btn btn-primary">Add to Done</a>
+          <a (click)="AddToDone('Yoga')" id="Adding3" class="btn btn-primary">Add to Done</a>
         </div>
       </div>
-      <div class="card" style="width: 10rem;">
-        <img class="card-img-top" src="assets/img/jogging.png" alt="Card image cap">
+      <div class="card" style="width: 20rem;">
+        
         <div class="card-body">
           <h4 class="card-title">Jogging</h4>
           <p class="card-text text-center"></p>
         </div>
         <div class="card-body text-center">
-          <a (click)="AddToDone('Jogging')" id="Adding4" class="btn btn-primary">Add to Done</a>
+          <a (click)="AddToDone(Jogging)" id="Adding4" class="btn btn-primary">Add to Done</a>
         </div>
 
       </div>
     </div>
     <h1 class="display-3"></h1>
-    <div class="row">
+    <div class="row" [@my-Exercises-Effects]="this.me.myExercises.length">
       <div class="col-md-5 ">
         <div class="card text-center">
           <div class="card-header">
-            My finished Exercises
+            My finished Exercisess
           </div>
           <ul class="list-group list-group-flush ">
             <li *ngFor="let x of this.me.myExercises; index as i" class="list-group-item" (click)="removeFromMyExercises(x)">
@@ -64,7 +64,22 @@
         </div>
       </div>
       <div class="col-md-5 ">
-        
+        <!-- <div class="input-group">
+          <span class="input-group-addon">Time:</span>
+          <input type="text" class="form-control" id="t" placeholder="(Minutes)" aria-describedby="basic-addon3"></input>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Sets:</span>
+          <input type="text" class="form-control" id="s" placeholder="Amount of sets you did" aria-describedby="basic-addon3">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Reps:</span>
+          <input type="text" class="form-control" id="r" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Weight:</span>
+          <input type="text" class="form-control" id="w" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
+        </div> -->
       </div>
     </div>
   </div>
